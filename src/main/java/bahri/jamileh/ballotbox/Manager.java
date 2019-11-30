@@ -82,8 +82,10 @@ public class Manager {
 
         try {
             ballotBoxGenesis = convertJsonToObject(transferQueue.take());
-            int boxId =ballotBoxGenesis.getBallotBox().get(ballotBoxId+"");
-            for (int i = boxId; i < boxId + ballotBoxGenesis.getMaxGenerateVotes(); i++) {
+            int offset = ballotBoxGenesis.getMaxGenerateVotes()/ballotBoxGenesis.getBallotBox().size();
+            int startvoteNumber= ballotBoxGenesis.getBallotBox().get(ballotBoxId+"");
+
+            for (int i = startvoteNumber ; i < startvoteNumber + offset ; i++) {
                 Vote vote = new Vote(ballotBoxGenesis.getElectionId(), i + "",
                         ballotBoxId + "", LocalDateTime.now(),
                         generateRandomCandidate(
