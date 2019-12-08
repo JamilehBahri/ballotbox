@@ -14,7 +14,7 @@ public class BallotboxApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(BallotboxApplication.class, args);
-        LOGGER.info("BallotBox Wait To Received Genesis And Generate Votes And Send It To Candidates  . . . . ");
+        LOGGER.info("BallotBox Wait To Receive Genesis Then Generate Votes And Send To Candidates  . . . . . . ");
 
     }
 
